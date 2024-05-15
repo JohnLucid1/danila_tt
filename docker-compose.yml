@@ -7,7 +7,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # исполнение всего кода в init.sql файле
+    #        ^^^               ^^^
+    # название нашего файла #директория в докере
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
